@@ -19,7 +19,8 @@ async def on_command_error(ctx, error):
 async def on_message(message):
     if message.author != client.user:
         msg = message.author.mention + "おはよう！いい朝だね！！"
-        #await client.send_message(message.channel, msg)
+        ch = client.get_channel()
+        await client.send_message(ch, msg)
     
 @client.command()
 async def ping(ctx):
